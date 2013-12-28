@@ -13,7 +13,7 @@
         }
     },
     "authorization":{
-        "homePage":"/InQueue/index.html",
+        "homePage":"/project2action/index.html",
         "signInPage":"/InQueue/test-signin.html",
         "securityTokenName":"TOKEN",
         "securityTokenExpirationTime":7200,
