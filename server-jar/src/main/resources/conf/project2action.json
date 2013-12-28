@@ -14,7 +14,7 @@
     },
     "authorization":{
         "homePage":"/project2action/index.html",
-        "signInPage":"/InQueue/test-signin.html",
+        "signInPage":"/project2action/test-signin.html",
         "securityTokenName":"TOKEN",
         "securityTokenExpirationTime":7200,
         "secureUrl":"/api",
