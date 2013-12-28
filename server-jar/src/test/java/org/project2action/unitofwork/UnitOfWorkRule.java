@@ -1,9 +1,11 @@
 package org.project2action.unitofwork;
 
 import org.hibernate.SessionFactory;
+import org.junit.Ignore;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 
+@Ignore
 public class UnitOfWorkRule extends TestWatcher {
 
     UnitOfWorkHelper unitOfWorkHelper = new UnitOfWorkHelper();

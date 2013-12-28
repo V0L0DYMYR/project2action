@@ -1,6 +1,7 @@
 package org.project2action.dao;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.project2action.domain.Person;
@@ -8,6 +9,7 @@ import org.project2action.domain.Queue;
 import org.project2action.domain.User;
 import org.project2action.unitofwork.UnitOfWorkRule;
 
+@Ignore
 public class UserDaoTest {
 
     UserDao userDao;

@@ -8,11 +8,13 @@ import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.db.DatabaseConfiguration;
 import com.yammer.dropwizard.hibernate.SessionFactoryFactory;
 import com.yammer.dropwizard.json.ObjectMapperFactory;
+
 import org.hibernate.FlushMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.context.internal.ManagedSessionContext;
+import org.junit.Ignore;
 import org.mockito.Mockito;
 
 import java.io.IOException;
@@ -22,6 +24,7 @@ import java.util.Set;
 import static com.yammer.dropwizard.testing.JsonHelpers.fromJson;
 import static com.yammer.dropwizard.testing.JsonHelpers.jsonFixture;
 
+@Ignore
 public class UnitOfWorkHelper {
 
     Session session;

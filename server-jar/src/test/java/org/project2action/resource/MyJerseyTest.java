@@ -6,6 +6,7 @@ import com.sun.jersey.test.framework.JerseyTest;
 import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class MyJerseyTest extends JerseyTest{
 
     public MyJerseyTest() throws Exception{

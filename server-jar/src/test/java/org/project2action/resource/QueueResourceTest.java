@@ -1,6 +1,7 @@
 package org.project2action.resource;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.project2action.dao.PersonDao;
@@ -9,6 +10,7 @@ import org.project2action.domain.Person;
 import org.project2action.domain.User;
 import org.project2action.unitofwork.UnitOfWorkRule;
 
+@Ignore
 public class QueueResourceTest {
 
     QueueResource queueResource;
