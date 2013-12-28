@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!-- Defined separately to be able using at both tiers: controller and service,
+        which demands messageSource to be placed at different contexts:
+        http://stackoverflow.com/a/5166285/1430055 -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="basenames">
+            <list>
+                <value>WEB-INF/properties/locale/messages</value>
+                <value>classpath:properties/locale/exceptions</value>
+            </list>
+        </property>
+        <property name="cacheSeconds" value="1" />
+    </bean>
+
+</beans>

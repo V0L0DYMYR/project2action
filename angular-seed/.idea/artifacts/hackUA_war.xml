@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hackUA:war">
+    <output-path>$PROJECT_DIR$/../server/hackUA/target</output-path>
+    <root id="archive" name="hackUA-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="hackUA:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,10 @@
+/*    "database":{
+ "driverClass": "org.postgresql.Driver",
+ "user": "postgres",
+ "password": "root",
+ "url": "jdbc:postgresql://localhost:5432/lifecycle",
+ "properties":{
+ "hibernate.hbm2ddl.auto": "validate",
+ "hibernate.dialect": "org.hibernate.dialect.PostgresPlusDialect"
+ }
+ }*/

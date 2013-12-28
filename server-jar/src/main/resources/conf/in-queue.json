@@ -1,0 +1,32 @@
+{
+    "assetsLocation":"/Users/volodymyrderkach/repo/local-idea-projects/InQueue/angular-seed/app/",
+    "database":{
+        "driverClass": "org.hsqldb.jdbcDriver",
+        "user": "sa",
+        "password": "",
+        "url": "jdbc:hsqldb:file:in_queue;shutdown=true",
+        "properties":{
+            "hibernate.hbm2ddl.auto": "update",
+            "hibernate.dialect": "org.hibernate.dialect.HSQLDialect",
+            "hibernate.show_sql":"true",
+            "hibernate.format_sql": "true"
+        }
+    },
+    "authorization":{
+        "homePage":"/InQueue/index.html",
+        "signInPage":"/InQueue/test-signin.html",
+        "securityTokenName":"TOKEN",
+        "securityTokenExpirationTime":7200,
+        "secureUrl":"/api",
+        "google":{
+            "userInfoUrl":"https://www.googleapis.com/oauth2/v1/userinfo",
+            "oauth2Url":"https://accounts.google.com/o/oauth2/token",
+            "clientId":"993285940276-u3ai1e3kd2adhfm6551s5lidk6no5uil.apps.googleusercontent.com",
+            "clientSecret":"8smfpPnYx7jbwrEw5PbRVtqk",
+            "redirectUri":"http://localhost:8000/oauth2/google",
+            "grantType":"authorization_code",
+            "accessTokenName": "access_token"
+        }
+    }
+
+}

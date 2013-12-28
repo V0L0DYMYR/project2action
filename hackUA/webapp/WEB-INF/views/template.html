@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/bootstrap.css" th:href="@{/css/bootstrap.css}" />
+
+    <script src="../../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"
+            th:src="@{/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js}" ></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <script>
+        /*<![CDATA[*/
+        window.jQuery || document.write('<script src="../../js/vendor/jquery-1.10.1.js"><\/script>');
+        /*]]>*/
+    </script>
+
+    <title>hack.ua - Template title</title>
+</head>
+
+<body>
+<header th:fragment="headerTpl">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/">hack.ua<sup class="beta">&nbsp;beta</sup></a>
+            </div>
+        </div> <!-- End of containerPanel -->
+    </div>
+</header>
+
+<!-- Page content -->
+
+<footer class="footer" th:fragment="footerTpl">
+    <div class="span12">
+        <p>Copyright &copy; 2013 <a href="http://hack.ua">hack.ua</a></p>
+    </div>
+</footer>
+
+<script src="../../js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script src="../../js/plugins.js" th:src="@{/js/plugins.js}"></script>
+
+<script>
+    /*<![CDATA[*/
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    /*]]>*/
+</script>
+</body>
+</html>

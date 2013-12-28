@@ -1,0 +1,68 @@
+@import 'reset';
+
+$btn-height: 20px;
+$btn-color: #fd6c40;
+$gap: 5px;
+
+@mixin fonts($size: 12pt, $padding:$gap) {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: $size;
+  color: black;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  text-decoration: none;
+}
+
+.h-middle {
+  margin: 0 auto;
+  width: 800px;
+  height: 100%;
+}
+
+.v-middle {
+  top: 50%;
+  margin-top: -100px;
+  position: absolute;
+  border-left: 2px solid black;
+  padding: 10px 30px;
+}
+
+@mixin box{padding:10px 0;}
+.box {@include box;}
+
+@mixin border($top:1px, $bottom:1px, $right:1px, $left:1px){
+  border-top: $top solid black;
+  border-bottom: $bottom solid black;
+  border-right: $right solid black;
+  border-left: $left solid black;
+}
+
+.border-top { @include border(1px,0,0,0); @include box;}
+.border-bottom { @include border(0, 1px, 0, 0); @include box;}
+.border-vertical { @include border(1px, 1px, 0, 0); @include box;}
+
+input{ height: 6*$gap - 2; margin:0px; padding: 0;
+  display: inline-block; @include border; box-sizing: border-box; line-height: 6*$gap;}
+
+@mixin btn($color: $btn-color, $height: 6*$gap, $radius:3px, $lr-padding: 4*$gap) {
+  border-radius: $radius;
+  background: $color;
+  line-height: $height - 2;
+  height: $height - 2;
+  text-align: center;
+  border: 1px solid darken($color, 30%);
+  padding: 0 $lr-padding 0 $lr-padding;
+  display: inline-block;
+  @include fonts(11pt, 0);
+}
+.btn{@include btn;}
+.link{@include btn(#cce3fb);}
+//.btn-remove{@include btn(#797979, $btn-height/2, $btn-height/2, 7px, 0);}
+
+.inline{display: inline-block;}
+.left{float: left;}
+.right{float: right; margin-top: -$gap;}
+
+h2 { @include fonts(15pt); }
+
+html, body { height: 100%; }

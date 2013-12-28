@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns:th="http://www.thymeleaf.org" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta th:substituteby="template :: [//meta]"/>
+    <link th:substituteby="template :: [//link]"/>
+    <link th:substituteby="template :: [//head/script]"/>
+    <title th:text="#{title.user}">hack.ua</title>
+</head>
+
+<body>
+<header th:include="template :: headerTpl"></header>
+
+<div class="container">
+
+</div>
+<!--! end of #container -->
+
+<footer th:substituteby="template :: footerTpl"></footer>
+
+<span th:substituteby="template :: [//body/script]"></span>
+
+</body>
+</html>

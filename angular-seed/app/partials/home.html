@@ -1,0 +1,16 @@
+<div class="HomeCtrl" ng-init="me.load()">
+    <div class="border-bottom">
+        <a href="#/create" class="link">Create New</a>
+        <a href="#/find" class="link">Find</a>
+        <a href="#/statistics" class="link">Statistics</a>
+
+        <form method="post" action="/oauth2/testing/logout" class="right">
+            <input type="submit" class="btn" value="Logout">
+        </form>
+    </div>
+    <ul>
+        <li ng-repeat="poll in me.polls" class="border-top">
+            <a href="#/poll/{{poll.id}}">{{ poll.title }}</a>
+        </li>
+    </ul>
+</div>
