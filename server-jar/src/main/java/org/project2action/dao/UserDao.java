@@ -13,4 +13,6 @@ public class UserDao extends AbstractDao<User> {
     public User findBySecurityToken(String securityToken) {
         return singleResult(criteria().add(Restrictions.eq("securityToken", securityToken)));
     }
+    
+    
 }

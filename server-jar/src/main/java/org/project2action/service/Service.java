@@ -5,17 +5,21 @@ import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.db.DatabaseConfiguration;
 import com.yammer.dropwizard.hibernate.HibernateBundle;
+
 import org.project2action.UserInjector;
 import org.project2action.config.Authorization;
 import org.project2action.config.Config;
+import org.project2action.dao.IdeaDao;
 import org.project2action.dao.PersonDao;
 import org.project2action.dao.PollDao;
 import org.project2action.dao.QueueDao;
 import org.project2action.dao.UserDao;
+import org.project2action.domain.Idea;
 import org.project2action.domain.Person;
 import org.project2action.domain.Poll;
 import org.project2action.domain.Queue;
 import org.project2action.domain.User;
+import org.project2action.resource.IdeaResource;
 import org.project2action.resource.PersonResource;
 import org.project2action.resource.PollResource;
 import org.project2action.resource.QueueResource;
@@ -26,7 +30,9 @@ import org.project2action.security.SecureTokenFilter;
 
 public class Service extends com.yammer.dropwizard.Service<Config> {
 
-    private final HibernateBundle<Config> hibernate = new HibernateBundle<Config>(Person.class, User.class, Queue.class, Poll.class) {
+    private final HibernateBundle<Config> hibernate = new HibernateBundle<Config>(
+    		       Person.class, User.class, Queue.class, Poll.class, Idea.class
+     ) {
         @Override
         public DatabaseConfiguration getDatabaseConfiguration(Config configuration) {
             return configuration.getDatabaseConfiguration();
@@ -48,6 +54,7 @@ public class Service extends com.yammer.dropwizard.Service<Config> {
         env.addResource(createTicketResource());
         env.addResource(createProjectResource());
         env.addResource(createOAuth2Resource(config));
+        env.addResource(createIdeaResource());
         env.addResource(new PollResource(new PollDao(hibernate.getSessionFactory())));
         env.addProvider(new UserInjector(getUserDao(), config));
         Authorization auth = config.getAuthorization();
@@ -68,8 +75,18 @@ public class Service extends com.yammer.dropwizard.Service<Config> {
         return new UserDao(hibernate.getSessionFactory());
     }
 
+    public IdeaResource createIdeaResource() {
+        final IdeaDao ideaDao = new IdeaDao(hibernate.getSessionFactory());
+        final UserDao userDao = new UserDao(hibernate.getSessionFactory());
+        return new IdeaResource(ideaDao, userDao);
+    }
+   
+    
     public PersonResource createTicketResource() {
         final PersonDao personDao = new PersonDao(hibernate.getSessionFactory());
         return new PersonResource(personDao);
     }
+    
+    
+    
 }

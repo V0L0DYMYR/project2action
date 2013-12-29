@@ -1,6 +1,7 @@
 package org.project2action.dao;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.project2action.domain.Person;
@@ -14,6 +15,7 @@ import java.util.Set;
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.project2action.Utils.asSet;
 
+@Ignore
 public class TicketDaoTest {
 
     PersonDao personDao;
