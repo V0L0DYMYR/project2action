@@ -1,48 +1,47 @@
 'use strict';
 
 angular.module('myApp.controllers', []).
-    controller('HomeCtrl', ['$scope', '$http', 'PollService', function ($scope, $http, PollService) {
+    controller('HomeCtrl', ['$scope', '$http', 'IdeaService', function ($scope, $http, IdeaService) {
         $scope.me = {
-            polls: null,
+            ideas: null,
             load: function () {
-                PollService.load(function (data) {
-                    $scope.me.polls = data;
+                IdeaService.load(function (data) {
+                    $scope.me.ideas = data;
                 });
             }
         }
     }])
-    .controller('NewIdeaCtrl', ['$scope', 'PollService', '$routeParams', function ($scope, PollService, $routeParams) {
-        var pollId = $routeParams.pollId;
+    .controller('NewIdeaCtrl', ['$scope', 'IdeaService', '$routeParams', function ($scope, IdeaService, $routeParams) {
         $scope.me = {
-            poll:null,
-            getPoll: function () {
-                PollService.getPoll(pollId, function (data) {
-                    $scope.me.poll = data;
+            newIdea :{},
+            create: function () {
+                IdeaService.create(this.newIdea, function (data) {
+                   // $scope.me.poll = data;
                 });
             }
         }
 
 
     }])
-    .controller('FindCtrl', ['$scope', 'PollService', function ($scope, PollService) {
+    .controller('FindCtrl', ['$scope', 'IdeaService', function ($scope, IdeaService) {
         $scope.me = {
             findInput: '',
             result: [],
             find: function () {
                 if (this.findInput.trim() != '')
-                    PollService.find(this.findInput, function (data) {
+                    IdeaService.find(this.findInput, function (data) {
                         $scope.me.result = data;
                     });
             }
         }
     }])
-    .controller('CreateCtrl', ['$scope', 'PollService', function ($scope, PollService) {
+    .controller('CreateCtrl', ['$scope', 'IdeaService', function ($scope, IdeaService) {
         $scope.me = {
             newPoll: '',
             messageOnCreate: '',
             create: function () {
                 var p = $scope.me;
-                PollService.create(this.newPoll, function (data) {
+                IdeaService.create(this.newPoll, function (data) {
                     q.messageOnCreate = 'Poll "' + q.newPoll + '" has been created.';
                 });
             }

@@ -1,18 +1,18 @@
 'use strict';
 
 angular.module('myApp.services', [])
-    .factory('PollService', ['$http', function($http){
+    .factory('IdeaService', ['$http', function($http){
         var service = {
             onError:function (data, status, headers, config) {
                 if(status == 500 && headers('Error') == 1000 && headers('Message') == 'Unauthorised')
-                    window.location = '/InQueue/test-signin.html';
+                    window.location = '/project2action/test-signin.html';
                     //window.location = '/InQueue/signin.html';
             },
             load:function(callback){
-                $http.get('/api/poll').success(callback).error(service.onError);
+                $http.get('/api/idea').success(callback).error(service.onError);
             },
-            create: function(pollTitle, callback){
-                $http.post('/api/poll', {title:pollTitle}).success(callback);
+            create: function(idea, callback){
+                $http.post('/api/idea', idea).success(callback);
             },
             getPoll: function(pollId, callback){
                 $http.get('/api/poll/'+pollId).success(callback);
