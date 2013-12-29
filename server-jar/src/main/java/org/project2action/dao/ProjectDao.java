@@ -26,6 +26,13 @@ public class ProjectDao extends AbstractDao<Project> {
                 .add(like("name", "%"+query+"%")));
 	}
 	
+	public List<Project>  findByIdea(Long ideaId)
+	{
+      return list(criteria()
+                .add(eq("idea.id", ideaId)));
+	}
+	
+	
 	public List<Project>  findByInitiator(Long initiatorId)
 	{
       return list(criteria()

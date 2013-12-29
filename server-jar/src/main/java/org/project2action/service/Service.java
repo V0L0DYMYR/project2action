@@ -54,34 +54,38 @@ public class Service extends com.yammer.dropwizard.Service<Config> {
 
     @Override
     public void run(Config config, Environment env) throws Exception {
-        env.addResource(createTicketResource());
+        final IdeaDao ideaDao = new IdeaDao(hibernate.getSessionFactory());
+        final UserDao userDao = new UserDao(hibernate.getSessionFactory());
+    	
+        //env.addResource(createTicketResource());
         env.addResource(createOAuth2Resource(config));
         env.addResource(createIdeaResource());
         env.addResource(createProjectResource());       
         env.addResource(new PollResource(new PollDao(hibernate.getSessionFactory())));
-        env.addProvider(new UserInjector(getUserDao(), config));
+        env.addProvider(new UserInjector(createUserDao(), config));
         Authorization auth = config.getAuthorization();
         env.addFilter(new SecureTokenFilter(auth.getSecurityTokenName()), auth.getSecureUrl()+"/*");
-        env.addResource(new DummyOAuthResource(getUserDao(), auth));
+        env.addResource(new DummyOAuthResource(createUserDao(), auth));
         env.addResource(new AssetsBundle(config.getAssetsLocation(),"/assets/"));
     }
 
     private QueueResource createQueueResource() {
-        return new QueueResource(new QueueDao(hibernate.getSessionFactory()), getUserDao());
+        return new QueueResource(new QueueDao(hibernate.getSessionFactory()), createUserDao());
     }
 
     private GoogleOAuth2Resource createOAuth2Resource(Config config) {
-        return new GoogleOAuth2Resource(getUserDao(), config.getAuthorization());
+        return new GoogleOAuth2Resource(createUserDao(), config.getAuthorization());
     }
 
-    private UserDao getUserDao() {
+    private UserDao createUserDao() {
         return new UserDao(hibernate.getSessionFactory());
     }
 
     public IdeaResource createIdeaResource() {
         final IdeaDao ideaDao = new IdeaDao(hibernate.getSessionFactory());
         final UserDao userDao = new UserDao(hibernate.getSessionFactory());
-        return new IdeaResource(ideaDao, userDao);
+        final ProjectDao projectDao = new ProjectDao(hibernate.getSessionFactory());
+        return new IdeaResource(ideaDao, userDao, projectDao);
     }
 
     public ProjectResource createProjectResource() {

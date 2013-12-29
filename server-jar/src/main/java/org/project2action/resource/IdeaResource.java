@@ -15,10 +15,12 @@ import javax.ws.rs.core.MediaType;
 
 import org.project2action.dao.IdeaDao;
 import org.project2action.dao.PersonDao;
+import org.project2action.dao.ProjectDao;
 import org.project2action.dao.UserDao;
 import org.project2action.domain.Idea;
 import org.project2action.domain.Person;
 import org.project2action.domain.Poll;
+import org.project2action.domain.Project;
 import org.project2action.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,10 +36,12 @@ public class IdeaResource {
     private static Logger log = LoggerFactory.getLogger(IdeaResource.class);
     private IdeaDao ideaDao;
     private UserDao userDao;
+    private ProjectDao projectDao;
 
-    public IdeaResource(IdeaDao  ideaDao, UserDao userDao) {
+    public IdeaResource(IdeaDao  ideaDao, UserDao userDao, ProjectDao projectDao) {
         this.ideaDao = ideaDao;
         this.userDao = userDao;
+        this.projectDao = projectDao;
     }
 
     @GET
@@ -54,6 +58,14 @@ public class IdeaResource {
     public Idea get(@Context User user, @PathParam("id")Long ideaId) {
         System.out.println(user+" "+ "get idea "+ideaId);
         return ideaDao.get(ideaId);
+    }
+    
+    @GET
+    @Path("{id}/projects")
+    @UnitOfWork
+    public List<Project> getProjects(@Context User user, @PathParam("id")Long ideaId) {
+        System.out.println(user+" "+ "get idea "+ideaId);
+        return projectDao.findByIdea(ideaId);
     }
 
     @POST
