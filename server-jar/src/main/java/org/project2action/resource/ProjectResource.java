@@ -46,6 +46,7 @@ public class ProjectResource {
 	    
 	    @GET
 	    @Path("{id}")
+        // TODO: get projects by idea_ID
 	    @UnitOfWork
 	    public Project get(@Context User user, @PathParam("id")Long projectId) {
 	        System.out.println(user+" "+ "get project "+projectId);

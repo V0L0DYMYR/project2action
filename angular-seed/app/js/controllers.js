@@ -36,12 +36,11 @@ angular.module('myApp.controllers', []).
     }])
     .controller('CreateProjectCtrl', ['$scope', 'IdeaService', function ($scope, IdeaService) {
         $scope.me = {
-            newPoll: '',
-            messageOnCreate: '',
+            newProject: {},
             create: function () {
                 var p = $scope.me;
-                IdeaService.create(this.newPoll, function (data) {
-                    q.messageOnCreate = 'Poll "' + q.newPoll + '" has been created.';
+                IdeaService.createProject(this.newProject, function (data) {
+                    //q.messageOnCreate = 'Poll "' + q.newPoll + '" has been created.';
                 });
             }
         };

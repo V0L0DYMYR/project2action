@@ -18,11 +18,11 @@ angular.module('myApp.services', [])
                 $http.get('/api/idea/'+ideaId).success(callback);
             },
 
-            removeQueue:function(queue){
-                $http.delete('/api/queue/'+ queue.id);
+            createProject:function(project, callback){
+                $http.post('/api/idea/', project).success(callback);
             },
-            getPeople:function(queueId, callback){
-                $http.get('/api/person/'+queueId).success(callback).error(service.onError);
+            getProjects:function(ideaId, callback){
+                $http.get('/api/i/'+queueId).success(callback).error(service.onError);
             },
             insertPerson:function(person, callback){
                 $http.post('/api/person', person).success(callback);
