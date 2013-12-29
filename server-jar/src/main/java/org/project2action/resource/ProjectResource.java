@@ -18,6 +18,7 @@ import org.project2action.dao.AssetDao;
 import org.project2action.dao.IdeaDao;
 import org.project2action.dao.ProjectDao;
 import org.project2action.dao.UserDao;
+import org.project2action.domain.Asset;
 import org.project2action.domain.Idea;
 import org.project2action.domain.Project;
 import org.project2action.domain.User;
@@ -55,6 +56,16 @@ public class ProjectResource {
 	        System.out.println(user+" "+ "get project "+projectId);
 	        return projectDao.get(projectId);
 	    }
+	    
+	    @GET
+	    @Path("{id}/assets")
+        // TODO: get projects by idea_ID
+	    @UnitOfWork
+	    public List<Asset> getAssets(@Context User user, @PathParam("id")Long projectId) {
+	        System.out.println(user+" "+ "get project assets"+projectId);
+	        return assetDao.findByProject(projectId);
+	    }
+	    
 	    
 	   
 	    @POST

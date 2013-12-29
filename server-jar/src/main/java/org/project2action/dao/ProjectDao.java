@@ -38,6 +38,8 @@ public class ProjectDao extends AbstractDao<Project> {
       return list(criteria()
                 .add(eq("initiator.id", initiatorId)));
 	}
+	
+	
 
 	public List<Project>  findByParticipant(User participant)
 	{
