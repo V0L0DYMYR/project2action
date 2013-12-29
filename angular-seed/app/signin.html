@@ -1,16 +1,63 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Sign In - InQueue</title>
-    <link rel="stylesheet" href="css/app.css"/>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 </head>
 <body>
-<div class="h-middle">
-    <div class="v-middle">
-            <h2>Sign In with</h2>
-            <a href="https://accounts.google.com/o/oauth2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&state=%2Fprofile&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Foauth2%2Fgoogle&response_type=code&client_id=993285940276-u3ai1e3kd2adhfm6551s5lidk6no5uil.apps.googleusercontent.com" class="btn">Google</a>
+<!--- start header block --->
+<div class="header_block login_block">
+    <img src="img/hbg.png" class="bg_image">
+    <!--- start shell --->
+    <div class="shell">
+        <!--- start header menu --->
+        <div class="header_menu">
+            <a href="/"><div class="logo_div left_div"></div></a>
+            <!--- start nav div --->
+            <div class="nav_div">
+                <ul>
+                    <li><a href="#">Головна</a></li>
+                    <li>Ресурсы
+                        <ul>
+                            <li><a href="#">Ідеї</a></li>
+                            <li><a href="#">Проекти</a></li>
+                            <li><a href="#">Учасники</a></li>
+                            <li><a href="#">Кейси</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Контакти</a></li>
+                    <li><a href="#">Вхід</a></li>
+                </ul>
+            </div>
+            <!--- end nav div --->
+        </div>
+        <!--- end header menu --->
+        <!--- start info header block --->
+        <div class="info_block">
+            <h1>Наш проект дає життя цікавим соціальним ідеям</h1>
+            <div class="description">Для того, щоб брати участь в проекті, Вам потрібно зареєструватись або ввійти в систему</div>
+            <div class="button_idea left_div"><a href="https://accounts.google.com/o/oauth2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&state=%2Fprofile&redirect_uri=http%3A%2F%2Fec2-54-202-158-184.us-west-2.compute.amazonaws.com%3A9000%2Foauth2%2Fgoogle&response_type=code&client_id=993285940276-u3ai1e3kd2adhfm6551s5lidk6no5uil.apps.googleusercontent.com">вхід</a></div>
+        </div>
+        <!--- end info header block --->
+    </div>
+    <!--- end shell --->
+</div>
+<!--- end header block --->
+<!--- start footer block --->
+<div class="footer_block">
+    <div class="shell">
+        <div class="logo_div"><img src="img/logo.png"></div>
+        <hr>
+        <div class="social">
+            <a href="#google+"><img src="img/social-g.png"></a>
+            <a href="#facebook"><img src="img/social-f.png"></a>
+            <a href="#twitter"><img src="img/social-t.png"></a>
+            <a href="#rss"><img src="img/social-r.png"></a>
+        </div>
     </div>
 </div>
+<!--- end footer block --->
 </body>
 </html>

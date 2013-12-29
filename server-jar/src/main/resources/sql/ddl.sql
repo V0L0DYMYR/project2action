@@ -41,3 +41,14 @@ CREATE TABLE project_participants
   project_id bigint  NOT NULL,
   user_id bigint  NOT NULL
 );
+
+CREATE TABLE ASSETS
+(
+  id bigint PRIMARY KEY NOT NULL AUTO_INCREMENT ,
+  name varchar (255) NOT NULL,
+  description varchar (1023),
+  quantity INT NOT NULL,
+  unit varchar (2047),
+  needed_project_id bigint  NOT NULL,
+  provided_by_id bigint  NOT NULL
+);

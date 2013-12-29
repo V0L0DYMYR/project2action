@@ -62,7 +62,6 @@ public class Service extends com.yammer.dropwizard.Service<Config> {
     	final ProjectDao projectDao = new ProjectDao(hibernate.getSessionFactory());
         final AssetDao assetDao = new AssetDao(hibernate.getSessionFactory());
     	
-        //env.addResource(createTicketResource());
         env.addResource(createOAuth2Resource(config,userDao));
         env.addResource(createIdeaResource(ideaDao,userDao,projectDao));
         env.addResource(createProjectResource(projectDao, userDao, assetDao));     

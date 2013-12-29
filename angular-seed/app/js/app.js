@@ -11,9 +11,9 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeCtrl'});
-  $routeProvider.when('/newidea', {templateUrl: 'partials/newidea.html', controller: 'NewIdeaCtrl'});
-  $routeProvider.when('/idea/:ideaId', {templateUrl: 'partials/viewIdea.html', controller: 'IdeaCtrl'});
-  $routeProvider.when('/createProject/:ideaId', {templateUrl: 'partials/createProject.html', controller: 'CreateProjectCtrl'});
+  $routeProvider.when('/newidea', {templateUrl: 'partials/new-idea.html', controller: 'NewIdeaCtrl'});
+  $routeProvider.when('/idea/:ideaId', {templateUrl: 'partials/view-dea.html', controller: 'IdeaCtrl'});
+  $routeProvider.when('/createProject/:ideaId', {templateUrl: 'partials/create-project.html', controller: 'CreateProjectCtrl'});
   $routeProvider.when('/statistics', {templateUrl: 'partials/poll/statistics.html', controller: 'StatCtrl'});
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);

@@ -104,6 +104,7 @@ public class Idea {
     	this.description = prev.description;
     	this.likes = prev.likes;
     	this.author = newAuthor;
+        this.authorId = newAuthor.getId();
     }
     
     public Idea withAuthor(User newAuthor) {
