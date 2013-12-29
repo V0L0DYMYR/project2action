@@ -1,9 +1,12 @@
 package org.project2action.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Objects;
+
 import org.project2action.Utils;
 
 import javax.persistence.*;
+
 import java.util.List;
 import java.util.Set;
 
@@ -39,6 +42,12 @@ public class User {
     )
     private Set<Queue> queues;
 
+    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,
+		    mappedBy="providedByUser")
+    @JsonIgnore
+    private Set<Asset> assets;
+   
+    
     @Column(name = "SECURITY_TOKEN")
     private String securityToken;
 

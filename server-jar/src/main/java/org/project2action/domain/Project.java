@@ -3,10 +3,12 @@ package org.project2action.domain;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -53,7 +56,7 @@ public class Project {
     @Transient
     private Long initiatorId;
     
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name = "project_participants",
        joinColumns = {@JoinColumn(name = "project_id")},
        inverseJoinColumns = {@JoinColumn(name = "user_id")}
@@ -61,6 +64,11 @@ public class Project {
     @JsonIgnore
     private Set<User> participants;
   
+    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,
+    		    mappedBy="neededInProject")
+    @JsonIgnore
+    private Set<Asset> assets;
+     
     @Column(name="status")
     @Enumerated(EnumType.STRING)
     private ProjectStatus status;
