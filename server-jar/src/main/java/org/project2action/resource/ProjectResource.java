@@ -14,6 +14,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import org.project2action.dao.AssetDao;
 import org.project2action.dao.IdeaDao;
 import org.project2action.dao.ProjectDao;
 import org.project2action.dao.UserDao;
@@ -30,10 +31,12 @@ public class ProjectResource {
 
 	private final ProjectDao projectDao;
 	private final UserDao    userDao;
+	private final AssetDao   assetDao;
 	
-	   public ProjectResource(ProjectDao  projectDao, UserDao userDao) {
+	   public ProjectResource(ProjectDao  projectDao, UserDao userDao, AssetDao assetDao) {
 	        this.projectDao = projectDao;
 	        this.userDao = userDao;
+	        this.assetDao = assetDao;
 	    }
 
 	    @GET

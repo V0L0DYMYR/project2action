@@ -2,7 +2,12 @@ package org.project2action.domain;
 
 import com.google.common.base.Objects;
 
+import org.project2action.Utils;
+
 import javax.persistence.*;
+
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "USERS")
@@ -11,26 +16,37 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "GOOGLE_ID", unique = true)
     private String googleId;
+
     private String email;
+
     @Column(name = "FULL_NAME")
     private String fullName;
-    private String locale;
 
-    /*@ManyToMany(fetch = FetchType.LAZY)
+    private String locale;
+/*
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "MEMBERS_QUEUES",
             joinColumns = {@JoinColumn(name = "MEMBER_ID")},
             inverseJoinColumns = {@JoinColumn(name = "QUEUE_ID")}
     )
     private List<Queue> memberIn;*/
-
-    /*@ManyToMany
+/*
+    @ManyToMany
     @JoinTable(name = "USERS_QUEUES",
             joinColumns = {@JoinColumn(name = "USERS_ID")},
             inverseJoinColumns = {@JoinColumn(name = "QUEUE_ID")}
     )
     private Set<Queue> queues;*/
+
+    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,
+		    mappedBy="providedByUser")
+    @JsonIgnore
+    private Set<Asset> assets;
+   
+    
     @Column(name = "SECURITY_TOKEN")
     private String securityToken;
 

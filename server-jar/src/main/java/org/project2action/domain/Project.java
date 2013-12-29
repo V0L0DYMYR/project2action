@@ -3,10 +3,12 @@ package org.project2action.domain;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,11 +28,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="PROJECTS")
 public class Project {
 
-
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
     @Column(name="name")
     private String name;
 
@@ -43,31 +46,36 @@ public class Project {
 
     @Transient
     private Long ideaId;
-
-
+   
+    
     @ManyToOne
     @JoinColumn(name="initiator_id")
     @JsonIgnore
     private User initiator;
-
+    
     @Transient
     private Long initiatorId;
-
-    @ManyToMany
+    
+    @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name = "project_participants",
        joinColumns = {@JoinColumn(name = "project_id")},
        inverseJoinColumns = {@JoinColumn(name = "user_id")}
     )
     @JsonIgnore
     private Set<User> participants;
-
+  
+    @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,
+    		    mappedBy="neededInProject")
+    @JsonIgnore
+    private Set<Asset> assets;
+     
     @Column(name="status")
     @Enumerated(EnumType.STRING)
     private ProjectStatus status;
-
+    
     @Column(name="resolution")
     private String resolution;
-
+	
     @Column(name="start_date")
     //@Temporal(TemporalType.TIMESTAMP)
     private long   startDate;
@@ -95,8 +103,8 @@ public class Project {
 		return (ideaId==null) ? (idea==null ? null : idea.getId())
 				                   :  ideaId ;
 	}
-
-
+	
+	
 	public User getInitiator() {
 		return initiator;
 	}
@@ -125,17 +133,17 @@ public class Project {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate.getTime();
 	}
-
+    
 	private Project(Project prev, User newInitiator)
 	{
 	 copyFrom(prev);
 	 this.initiator = newInitiator;
 	 this.initiatorId = null;
 	}
-
+	
 	public Project withInitiator(User initiator)
 	{
-     return new Project(this, initiator);
+     return new Project(this, initiator);		
 	}
 
 	private Project(Project prev, Date startDate)
@@ -146,14 +154,14 @@ public class Project {
 
 	public Project withStartDate(Date startDate)
 	{
-     return new Project(this, startDate);
+     return new Project(this, startDate);		
 	}
-
-
+	
+	
 	private void copyFrom(Project p)
 	{
       this.id = p.id;
-      this.name = p.name;
+      this.name = p.name;		
 	  this.description = p.description;
 	  this.idea = p.idea;
 	  this.ideaId = p.ideaId;
@@ -164,5 +172,5 @@ public class Project {
 	  this.resolution = p.resolution;
 	  this.startDate = p.startDate;
 	}
-
+    
 }
