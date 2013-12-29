@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8431A32D1870296100F1E744 /* ava.png in Resources */ = {isa = PBXBuildFile; fileRef = 8431A32A1870296100F1E744 /* ava.png */; };
+		8431A32E1870296100F1E744 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8431A32B1870296100F1E744 /* back.png */; };
+		8431A32F1870296100F1E744 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8431A32C1870296100F1E744 /* logo.png */; };
 		84AFCDE9186F8AFD00C1B722 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AFCDE8186F8AFD00C1B722 /* Foundation.framework */; };
 		84AFCDEB186F8AFD00C1B722 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AFCDEA186F8AFD00C1B722 /* CoreGraphics.framework */; };
 		84AFCDED186F8AFD00C1B722 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AFCDEC186F8AFD00C1B722 /* UIKit.framework */; };
@@ -38,7 +41,6 @@
 		84AFCE49186F937500C1B722 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFCE48186F937500C1B722 /* Reachability.m */; };
 		84AFCE4C186F969700C1B722 /* ProjectsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFCE4B186F969700C1B722 /* ProjectsVC.m */; };
 		84AFCE4F186F988100C1B722 /* NewProjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFCE4E186F988100C1B722 /* NewProjectVC.m */; };
-		84AFCE54186FA61200C1B722 /* ava1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AFCE53186FA61200C1B722 /* ava1.png */; };
 		84AFCE57186FA72E00C1B722 /* ProjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFCE56186FA72E00C1B722 /* ProjectVC.m */; };
 /* End PBXBuildFile section */
 
@@ -53,14 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		84AFCDE5186F8AFD00C1B722 /* Project2Action.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project2Action.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8431A32A1870296100F1E744 /* ava.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ava.png; sourceTree = "<group>"; };
+		8431A32B1870296100F1E744 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		8431A32C1870296100F1E744 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		84AFCDE5186F8AFD00C1B722 /* P2A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2A.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AFCDE8186F8AFD00C1B722 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		84AFCDEA186F8AFD00C1B722 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		84AFCDEC186F8AFD00C1B722 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		84AFCDF0186F8AFD00C1B722 /* Project2Action-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Project2Action-Info.plist"; sourceTree = "<group>"; };
+		84AFCDF0186F8AFD00C1B722 /* P2A-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "P2A-Info.plist"; sourceTree = "<group>"; };
 		84AFCDF2186F8AFE00C1B722 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84AFCDF4186F8AFE00C1B722 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		84AFCDF6186F8AFE00C1B722 /* Project2Action-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project2Action-Prefix.pch"; sourceTree = "<group>"; };
+		84AFCDF6186F8AFE00C1B722 /* P2A-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2A-Prefix.pch"; sourceTree = "<group>"; };
 		84AFCDF7186F8AFE00C1B722 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84AFCDF8186F8AFE00C1B722 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		84AFCDFB186F8AFE00C1B722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -68,9 +73,9 @@
 		84AFCE00186F8AFE00C1B722 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		84AFCE01186F8AFE00C1B722 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84AFCE03186F8AFE00C1B722 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		84AFCE09186F8AFE00C1B722 /* Project2ActionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project2ActionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AFCE09186F8AFE00C1B722 /* P2ATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P2ATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AFCE0A186F8AFE00C1B722 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		84AFCE12186F8AFE00C1B722 /* Project2ActionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Project2ActionTests-Info.plist"; sourceTree = "<group>"; };
+		84AFCE12186F8AFE00C1B722 /* P2ATests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "P2ATests-Info.plist"; sourceTree = "<group>"; };
 		84AFCE14186F8AFE00C1B722 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84AFCE16186F8AFE00C1B722 /* FITPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FITPTests.m; sourceTree = "<group>"; };
 		84AFCE20186F8B7C00C1B722 /* MainScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenVC.h; sourceTree = "<group>"; };
@@ -104,7 +109,6 @@
 		84AFCE4B186F969700C1B722 /* ProjectsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsVC.m; sourceTree = "<group>"; };
 		84AFCE4D186F988100C1B722 /* NewProjectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectVC.h; sourceTree = "<group>"; };
 		84AFCE4E186F988100C1B722 /* NewProjectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectVC.m; sourceTree = "<group>"; };
-		84AFCE53186FA61200C1B722 /* ava1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ava1.png; sourceTree = "<group>"; };
 		84AFCE55186FA72E00C1B722 /* ProjectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectVC.h; sourceTree = "<group>"; };
 		84AFCE56186FA72E00C1B722 /* ProjectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +137,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8431A3291870296100F1E744 /* gfx */ = {
+			isa = PBXGroup;
+			children = (
+				8431A32A1870296100F1E744 /* ava.png */,
+				8431A32B1870296100F1E744 /* back.png */,
+				8431A32C1870296100F1E744 /* logo.png */,
+			);
+			path = gfx;
+			sourceTree = "<group>";
+		};
 		84AFCDDC186F8AFD00C1B722 = {
 			isa = PBXGroup;
 			children = (
@@ -146,8 +160,8 @@
 		84AFCDE6186F8AFD00C1B722 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84AFCDE5186F8AFD00C1B722 /* Project2Action.app */,
-				84AFCE09186F8AFE00C1B722 /* Project2ActionTests.xctest */,
+				84AFCDE5186F8AFD00C1B722 /* P2A.app */,
+				84AFCE09186F8AFE00C1B722 /* P2ATests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,7 +180,7 @@
 		84AFCDEE186F8AFD00C1B722 /* FITP */ = {
 			isa = PBXGroup;
 			children = (
-				84AFCE50186FA30500C1B722 /* gfx */,
+				8431A3291870296100F1E744 /* gfx */,
 				84AFCE26186F91D400C1B722 /* AFNetworking */,
 				84AFCE23186F91CD00C1B722 /* Utilities.h */,
 				84AFCE24186F91CD00C1B722 /* Utilities.m */,
@@ -193,10 +207,10 @@
 		84AFCDEF186F8AFD00C1B722 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84AFCDF0186F8AFD00C1B722 /* Project2Action-Info.plist */,
+				84AFCDF0186F8AFD00C1B722 /* P2A-Info.plist */,
 				84AFCDF1186F8AFE00C1B722 /* InfoPlist.strings */,
 				84AFCDF4186F8AFE00C1B722 /* main.m */,
-				84AFCDF6186F8AFE00C1B722 /* Project2Action-Prefix.pch */,
+				84AFCDF6186F8AFE00C1B722 /* P2A-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -213,7 +227,7 @@
 		84AFCE11186F8AFE00C1B722 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84AFCE12186F8AFE00C1B722 /* Project2ActionTests-Info.plist */,
+				84AFCE12186F8AFE00C1B722 /* P2ATests-Info.plist */,
 				84AFCE13186F8AFE00C1B722 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -249,20 +263,12 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		84AFCE50186FA30500C1B722 /* gfx */ = {
-			isa = PBXGroup;
-			children = (
-				84AFCE53186FA61200C1B722 /* ava1.png */,
-			);
-			path = gfx;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		84AFCDE4186F8AFD00C1B722 /* Project2Action */ = {
+		84AFCDE4186F8AFD00C1B722 /* P2A */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84AFCE1A186F8AFE00C1B722 /* Build configuration list for PBXNativeTarget "Project2Action" */;
+			buildConfigurationList = 84AFCE1A186F8AFE00C1B722 /* Build configuration list for PBXNativeTarget "P2A" */;
 			buildPhases = (
 				84AFCDE1186F8AFD00C1B722 /* Sources */,
 				84AFCDE2186F8AFD00C1B722 /* Frameworks */,
@@ -272,14 +278,14 @@
 			);
 			dependencies = (
 			);
-			name = Project2Action;
+			name = P2A;
 			productName = FITP;
-			productReference = 84AFCDE5186F8AFD00C1B722 /* Project2Action.app */;
+			productReference = 84AFCDE5186F8AFD00C1B722 /* P2A.app */;
 			productType = "com.apple.product-type.application";
 		};
-		84AFCE08186F8AFE00C1B722 /* Project2ActionTests */ = {
+		84AFCE08186F8AFE00C1B722 /* P2ATests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84AFCE1D186F8AFE00C1B722 /* Build configuration list for PBXNativeTarget "Project2ActionTests" */;
+			buildConfigurationList = 84AFCE1D186F8AFE00C1B722 /* Build configuration list for PBXNativeTarget "P2ATests" */;
 			buildPhases = (
 				84AFCE05186F8AFE00C1B722 /* Sources */,
 				84AFCE06186F8AFE00C1B722 /* Frameworks */,
@@ -290,9 +296,9 @@
 			dependencies = (
 				84AFCE0F186F8AFE00C1B722 /* PBXTargetDependency */,
 			);
-			name = Project2ActionTests;
+			name = P2ATests;
 			productName = FITPTests;
-			productReference = 84AFCE09186F8AFE00C1B722 /* Project2ActionTests.xctest */;
+			productReference = 84AFCE09186F8AFE00C1B722 /* P2ATests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -309,7 +315,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 84AFCDE0186F8AFD00C1B722 /* Build configuration list for PBXProject "Project2Action" */;
+			buildConfigurationList = 84AFCDE0186F8AFD00C1B722 /* Build configuration list for PBXProject "P2A" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -322,8 +328,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84AFCDE4186F8AFD00C1B722 /* Project2Action */,
-				84AFCE08186F8AFE00C1B722 /* Project2ActionTests */,
+				84AFCDE4186F8AFD00C1B722 /* P2A */,
+				84AFCE08186F8AFE00C1B722 /* P2ATests */,
 			);
 		};
 /* End PBXProject section */
@@ -335,9 +341,11 @@
 			files = (
 				84AFCE45186F91D500C1B722 /* README.md in Resources */,
 				84AFCDFF186F8AFE00C1B722 /* Main_iPad.storyboard in Resources */,
-				84AFCE54186FA61200C1B722 /* ava1.png in Resources */,
+				8431A32F1870296100F1E744 /* logo.png in Resources */,
 				84AFCE04186F8AFE00C1B722 /* Images.xcassets in Resources */,
 				84AFCDFC186F8AFE00C1B722 /* Main_iPhone.storyboard in Resources */,
+				8431A32E1870296100F1E744 /* back.png in Resources */,
+				8431A32D1870296100F1E744 /* ava.png in Resources */,
 				84AFCDF3186F8AFE00C1B722 /* InfoPlist.strings in Resources */,
 				84AFCE44186F91D500C1B722 /* LICENSE in Resources */,
 			);
@@ -392,7 +400,7 @@
 /* Begin PBXTargetDependency section */
 		84AFCE0F186F8AFE00C1B722 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 84AFCDE4186F8AFD00C1B722 /* Project2Action */;
+			target = 84AFCDE4186F8AFD00C1B722 /* P2A */;
 			targetProxy = 84AFCE0E186F8AFE00C1B722 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -513,9 +521,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FITP/Project2Action-Prefix.pch";
-				INFOPLIST_FILE = "FITP/Project2Action-Info.plist";
-				PRODUCT_NAME = Project2Action;
+				GCC_PREFIX_HEADER = "FITP/P2A-Prefix.pch";
+				INFOPLIST_FILE = "FITP/P2A-Info.plist";
+				PRODUCT_NAME = P2A;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -526,9 +534,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FITP/Project2Action-Prefix.pch";
-				INFOPLIST_FILE = "FITP/Project2Action-Info.plist";
-				PRODUCT_NAME = Project2Action;
+				GCC_PREFIX_HEADER = "FITP/P2A-Prefix.pch";
+				INFOPLIST_FILE = "FITP/P2A-Info.plist";
+				PRODUCT_NAME = P2A;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -549,8 +557,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "FITPTests/Project2ActionTests-Info.plist";
-				PRODUCT_NAME = Project2ActionTests;
+				INFOPLIST_FILE = "FITPTests/P2ATests-Info.plist";
+				PRODUCT_NAME = P2ATests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -568,8 +576,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FITP/FITP-Prefix.pch";
-				INFOPLIST_FILE = "FITPTests/Project2ActionTests-Info.plist";
-				PRODUCT_NAME = Project2ActionTests;
+				INFOPLIST_FILE = "FITPTests/P2ATests-Info.plist";
+				PRODUCT_NAME = P2ATests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -578,7 +586,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84AFCDE0186F8AFD00C1B722 /* Build configuration list for PBXProject "Project2Action" */ = {
+		84AFCDE0186F8AFD00C1B722 /* Build configuration list for PBXProject "P2A" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84AFCE18186F8AFE00C1B722 /* Debug */,
@@ -587,21 +595,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84AFCE1A186F8AFE00C1B722 /* Build configuration list for PBXNativeTarget "Project2Action" */ = {
+		84AFCE1A186F8AFE00C1B722 /* Build configuration list for PBXNativeTarget "P2A" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84AFCE1B186F8AFE00C1B722 /* Debug */,
 				84AFCE1C186F8AFE00C1B722 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		84AFCE1D186F8AFE00C1B722 /* Build configuration list for PBXNativeTarget "Project2ActionTests" */ = {
+		84AFCE1D186F8AFE00C1B722 /* Build configuration list for PBXNativeTarget "P2ATests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84AFCE1E186F8AFE00C1B722 /* Debug */,
 				84AFCE1F186F8AFE00C1B722 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

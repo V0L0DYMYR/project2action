@@ -26,8 +26,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    
 	// Do any additional setup after loading the view.
 }
+
+- (void) viewDidAppear:(BOOL)animated {
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -58,6 +67,12 @@
     [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     [cell.textLabel setText:[NSString stringWithFormat:@"Завдання %d",indexPath.row]];
     [cell.detailTextLabel setTextColor:[UIColor darkGrayColor]];
+    
+    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    [cell.detailTextLabel setTextColor:[UIColor whiteColor]];
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
+    [cell setBackgroundColor:[UIColor clearColor]];
+    
     return cell;
 }
 

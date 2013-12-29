@@ -26,14 +26,37 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.title=@"МОЇ ПРОЕКТИ";
+    
+    NSLog(@"Load projects");
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:host]];
+    
+    
+    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET"
+                                                            path:@"api/project"
+                                                      parameters:nil];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [httpClient registerHTTPOperationClass:[AFHTTPRequestOperation class]];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // Print the response body in text
+        NSLog(@"Response: %@", [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    [operation start];
+    
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
     self.title=nil;
 }
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
 	// Do any additional setup after loading the view.
 }
 
@@ -66,8 +89,11 @@
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     [cell.textLabel setText:@"Project Alpha"];
     [cell.detailTextLabel setText:@"Project description"];
-    [cell.detailTextLabel setTextColor:[UIColor darkGrayColor]];
-    [cell.imageView setImage:[UIImage imageNamed:@"ava1"]];
+    [cell.textLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    [cell.detailTextLabel setTextColor:[UIColor whiteColor]];
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
+    [cell.imageView setImage:[UIImage imageNamed:@"ava"]];
+    [cell setBackgroundColor:[UIColor clearColor]];
     return cell;
 }
 
