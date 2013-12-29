@@ -5,7 +5,7 @@ angular.module('myApp.services', [])
         var service = {
             onError:function (data, status, headers, config) {
                 if(status == 500 && headers('Error') == 1000 && headers('Message') == 'Unauthorised')
-                    window.location = '/project2action/test-signin.html';
+                    window.location = '/project2action/signin.html';
                     //window.location = '/InQueue/signin.html';
             },
             load:function(callback){

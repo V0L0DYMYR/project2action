@@ -1,0 +1,20 @@
+<div class="main_shell" ng-controller="NewIdeaCtrl">
+    <div class="form sign_up">
+        <h1>Форма реєстрації ідеї</h1>
+        <form>
+            <span>Назва ідеї</span>
+            <input type="text" name="idea_name" ng-model="newIdea.name"><br />
+            <span>Опис ідеї</span>
+            <textarea name="idea_description" ng-model="newIdea.description"></textarea><br />
+            <span>Лого ідеї</span>
+            <input type="file" class="left_div" name="idea_image" ng-model="newIdea.image">
+            <img src="noimage.jpg" class="right_div"><br />
+            <input type="hidden" name="idea_location" ng-model="newIdea.location">
+            <input type="hidden" name="idea_author" ng-model="newIdea.author_id">
+            <input type="hidden" name="idea_id" ng-model="newIdea._id">
+            <div class="button_idea right_div radius_5" ng-click="me.create()">+ додати ідею</div>
+        </form>
+        <div style="clear:both"></div>
+    </div>
+</div>
+<!--- end main shell --->

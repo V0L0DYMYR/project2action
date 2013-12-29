@@ -17,7 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.101:8000/project2action/signin.html"]]];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -28,6 +27,10 @@
     self.title=@"Проекти в Дію!";
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/project2action/test-signin.html",host]]]];
+
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -38,10 +41,11 @@
     NSHTTPCookie *cookie;
     NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     for (cookie in [cookieJar cookies]) {
-        NSLog(@"CK: %@",[cookie name]);
+//        NSLog(@"%@ = %@",[cookie name],[cookie value]);
 //        if ([[cookie domain] isEqualToString:self.domain]) {
-            if ([[cookie name] isEqualToString:@"oauth_token"]) {
-                return [cookie value];
+            if ([[cookie name] isEqualToString:@"TOKEN"]) {
+                [myAppDelegate setTheCookie:cookie];
+                return [[myAppDelegate theCookie] value];
             }
         
 //        }
@@ -52,7 +56,10 @@
 - (void)webViewDidFinishLoad:(UIWebView *)theWebView
 {
     NSString* token = [self getTokenFromCookie];
-    NSLog(@"TOKEN: %@",token);
+    if (token) {
+        MainScreenVC *vc=[self.storyboard instantiateViewControllerWithIdentifier:@"MainScreenVC"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 @end

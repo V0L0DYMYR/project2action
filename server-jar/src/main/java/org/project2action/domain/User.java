@@ -27,20 +27,20 @@ public class User {
     private String fullName;
 
     private String locale;
-
+/*
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "MEMBERS_QUEUES",
             joinColumns = {@JoinColumn(name = "MEMBER_ID")},
             inverseJoinColumns = {@JoinColumn(name = "QUEUE_ID")}
     )
-    private List<Queue> memberIn;
-
+    private List<Queue> memberIn;*/
+/*
     @ManyToMany
     @JoinTable(name = "USERS_QUEUES",
             joinColumns = {@JoinColumn(name = "USERS_ID")},
             inverseJoinColumns = {@JoinColumn(name = "QUEUE_ID")}
     )
-    private Set<Queue> queues;
+    private Set<Queue> queues;*/
 
     @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,
 		    mappedBy="providedByUser")
@@ -70,12 +70,11 @@ public class User {
         this.email = other.email;
         this.fullName = other.fullName;
         this.locale = other.locale;
-        this.queues = other.queues;
-        this.memberIn = other.memberIn;
         this.securityToken = other.securityToken;
     }
 
-    public User() {}
+    public User() {
+    }
 
     public User(String email, String fullName, String token) {
         this.email = email;
@@ -107,10 +106,6 @@ public class User {
         return securityToken;
     }
 
-    public List<Queue> getMemberIn(){
-        return memberIn;
-    }
-
     @Override
     public String toString() {
         return Objects.toStringHelper(this)
@@ -120,8 +115,4 @@ public class User {
                 .toString();
     }
 
-    public User jumpIn(Queue queue) {
-        Utils.initializeIfNull(this.memberIn).add(queue);
-        return this;
-    }
 }

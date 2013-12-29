@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0177F8AA-58B8-48F1-8759-3C8573251739</string>
+	<key>IDESourceControlProjectName</key>
+	<string>P2A</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>71D7E910-6C8D-4910-8F90-5318516A0518</key>
+		<string>https://github.com/vderkach/project2action.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOS/P2A.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>71D7E910-6C8D-4910-8F90-5318516A0518</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vderkach/project2action.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>71D7E910-6C8D-4910-8F90-5318516A0518</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>71D7E910-6C8D-4910-8F90-5318516A0518</string>
+			<key>IDESourceControlWCCName</key>
+			<string>project2action</string>
+		</dict>
+	</array>
+</dict>
+</plist>

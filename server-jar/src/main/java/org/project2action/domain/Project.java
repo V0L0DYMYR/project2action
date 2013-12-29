@@ -77,9 +77,9 @@ public class Project {
     private String resolution;
 	
     @Column(name="start_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date   startDate;
-    
+    //@Temporal(TemporalType.TIMESTAMP)
+    private long   startDate;
+
     public Project()
     {}
 
@@ -127,11 +127,11 @@ public class Project {
 	}
 
 	public Date getStartDate() {
-		return startDate;
+		return new Date(startDate);
 	}
 
 	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
+		this.startDate = startDate.getTime();
 	}
     
 	private Project(Project prev, User newInitiator)
@@ -149,7 +149,7 @@ public class Project {
 	private Project(Project prev, Date startDate)
 	{
 	 copyFrom(prev);
-	 this.startDate = startDate;
+	 this.startDate = startDate.getTime();
 	}
 
 	public Project withStartDate(Date startDate)

@@ -1,0 +1,10 @@
+<div ng-controller="IdeaCtrl" ng-init="me.getIdea()">
+    <div>
+        <a class="button_idea" href="#createProject/{{me.idea.id}}">Create Project</a>
+        <h2>{{me.idea.name}}</h2>
+        <h2>{{me.idea.description}}</h2>
+        <div ng-repeat="project in me.idea.projects">
+
+        </div>
+    </div>
+</div>
