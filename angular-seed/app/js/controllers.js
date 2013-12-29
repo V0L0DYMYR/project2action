@@ -23,26 +23,24 @@ angular.module('myApp.controllers', []).
 
 
     }])
-    .controller('FindCtrl', ['$scope', 'IdeaService', function ($scope, IdeaService) {
+    .controller('IdeaCtrl', ['$scope', 'IdeaService',  '$routeParams', function ($scope, IdeaService , $routeParams) {
+        var ideaId = $routeParams.ideaId;
         $scope.me = {
-            findInput: '',
-            result: [],
-            find: function () {
-                if (this.findInput.trim() != '')
-                    IdeaService.find(this.findInput, function (data) {
-                        $scope.me.result = data;
-                    });
+            idea: {},
+            getIdea: function () {
+                IdeaService.getIdea(ideaId, function (data) {
+                    $scope.me.idea = data;
+                });
             }
         }
     }])
-    .controller('CreateCtrl', ['$scope', 'IdeaService', function ($scope, IdeaService) {
+    .controller('CreateProjectCtrl', ['$scope', 'IdeaService', function ($scope, IdeaService) {
         $scope.me = {
-            newPoll: '',
-            messageOnCreate: '',
+            newProject: {},
             create: function () {
                 var p = $scope.me;
-                IdeaService.create(this.newPoll, function (data) {
-                    q.messageOnCreate = 'Poll "' + q.newPoll + '" has been created.';
+                IdeaService.createProject(this.newProject, function (data) {
+                    //q.messageOnCreate = 'Poll "' + q.newPoll + '" has been created.';
                 });
             }
         };
