@@ -49,14 +49,15 @@ public class QueueResource {
     @UnitOfWork
     public void jumpIn(@Context User user, @PathParam("queueId") Long queueId){
         Queue queue = queueDao.get(queueId);
-        userDao.saveOrUpdate(user.jumpIn(queue));
+     //   userDao.saveOrUpdate(user.jumpIn(queue));
     }
 
     @GET
     @Path("memberIn")
     @UnitOfWork
     public List<Queue> memberIn(@Context User user){
-        return user.getMemberIn();
+   //     return user.getMemberIn();
+    	return null;
     }
 
     @DELETE
