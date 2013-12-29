@@ -11,6 +11,9 @@
 #import "MainScreenVC.h"
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
+#import "Idea.h"
+#import "Project.h"
+#import <RestKit.h>
 
 #define myAppDelegate (AppDelegate*)[[UIApplication sharedApplication] delegate]
 

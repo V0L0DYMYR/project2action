@@ -28,7 +28,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/project2action/signin.html",host]]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/project2action/test-signin.html",host]]]];
 
 }
 - (void)didReceiveMemoryWarning

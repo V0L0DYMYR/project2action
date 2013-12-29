@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "84AFCDE4186F8AFD00C1B722"
-               BuildableName = "Project2Action.app"
+               BuildableName = "P2A.app"
                BlueprintName = "P2A"
                ReferencedContainer = "container:P2A.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "84AFCE08186F8AFE00C1B722"
-               BuildableName = "Project2ActionTests.xctest"
+               BuildableName = "P2ATests.xctest"
                BlueprintName = "P2ATests"
                ReferencedContainer = "container:P2A.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84AFCDE4186F8AFD00C1B722"
-            BuildableName = "Project2Action.app"
+            BuildableName = "P2A.app"
             BlueprintName = "P2A"
             ReferencedContainer = "container:P2A.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84AFCDE4186F8AFD00C1B722"
-            BuildableName = "Project2Action.app"
+            BuildableName = "P2A.app"
             BlueprintName = "P2A"
             ReferencedContainer = "container:P2A.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "84AFCDE4186F8AFD00C1B722"
-            BuildableName = "Project2Action.app"
+            BuildableName = "P2A.app"
             BlueprintName = "P2A"
             ReferencedContainer = "container:P2A.xcodeproj">
          </BuildableReference>
