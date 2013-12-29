@@ -1,16 +1,140 @@
-<div class="HomeCtrl" ng-init="me.load()">
-    <div class="border-bottom">
-        <a href="#/create" class="link">Create New</a>
-        <a href="#/find" class="link">Find</a>
-        <a href="#/statistics" class="link">Statistics</a>
-
-        <form method="post" action="/oauth2/testing/logout" class="right">
-            <input type="submit" class="btn" value="Logout">
-        </form>
+<div class="HomeCtrl" ng-init="me.load()"><div>
+<!--- start header block --->
+<div class="header_block">
+    <img src="/project2action/img/h_bg1.png" class="bg_image">
+    <!--- start shell --->
+    <div class="shell">
+        <!--- start header menu --->
+        <div class="header_menu">
+            <a href="/"><div class="logo_div"></div></a>
+            <!--- start nav div --->
+            <div class="nav_div">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li>Ресурсы
+                        <ul>
+                            <li><a href="#">Идеи</a></li>
+                            <li><a href="#">Проекты</a></li>
+                            <li><a href="#">Участники</a></li>
+                            <li><a href="#">Кейсы</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Войти</a></li>
+                </ul>
+            </div>
+            <!--- end nav div --->
+        </div>
+        <!--- end header menu --->
+        <!--- start info header block --->
+        <div class="info_header_block">
+            <h1>Наш проект дает жизнь интересным социальным идеям</h1>
+            <div class="description">Если у Вас есть интересная идея, как организовать или улучшить пространство вокруг себя, предложите свою идею, и если она наберет много голосов, мы поможем ее реализовать</div>
+            <div class="button"><a href="#newidea">+добавить идею</a></div>
+        </div>
+        <!--- end info header block --->
     </div>
-    <ul>
-        <li ng-repeat="poll in me.polls" class="border-top">
-            <a href="#/poll/{{poll.id}}">{{ poll.title }}</a>
-        </li>
-    </ul>
+    <!--- end shell --->
+</div>
+<!--- end header block --->
+<!--- start search block --->
+<div class="search_block">
+    <form>
+        <span>Поиск</span>
+        <input type="text" name="search">
+    </form>
+</div>
+<!--- end search block --->
+<!--- start top idea block --->
+<div class="top_idea_block">
+    <div class="shell">
+        <h1>Найкращі ідеї за останній час</h1>
+        <!--- start one idea block --->
+        <div class="one_block">
+            <img src="/project2action/img/idea.png">
+            <h1></h1>
+            <div class="description"></div>
+            <div class="rating"></div>
+        </div>
+        <!--- end one idea block --->
+        <!--- start one idea block --->
+        <div class="one_block">
+            <img src="/project2action/img/idea.png">
+            <h1></h1>
+            <div class="description"></div>
+            <div class="rating"></div>
+        </div>
+        <!--- end one idea block --->
+        <!--- start one idea block --->
+        <div class="one_block">
+            <img src="/project2action/img/idea.png">
+            <h1></h1>
+            <div class="description"></div>
+            <div class="rating"></div>
+        </div>
+        <!--- end one idea block --->
+        <!--- start one idea block --->
+        <div class="one_block">
+            <img src="/project2action/img/idea.png">
+            <h1></h1>
+            <div class="description"></div>
+            <div class="rating"></div>
+        </div>
+        <!--- end one idea block --->
+    </div>
+</div>
+<!--- end top idea block --->
+<!--- start top project block --->
+<div class="top_project_block">
+    <h1>Найкращі проекти за останній час</h1>
+    <!--- start one project block --->
+    <div class="one_block">
+        <img src="/project2action/img/noimage.jpg">
+        <h1></h1>
+        <div class="description"></div>
+        <div class="rating"></div>
+    </div>
+    <!--- end one project block --->
+    <!--- start one project block --->
+    <div class="one_block">
+        <img src="/project2action/img/noimage.jpg">
+        <h1></h1>
+        <div class="description"></div>
+        <div class="rating"></div>
+    </div>
+    <!--- end one project block --->
+    <!--- start one project block --->
+    <div class="one_block">
+        <img src="/project2action/img/noimage.jpg">
+        <h1></h1>
+        <div class="description"></div>
+        <div class="rating"></div>
+    </div>
+    <!--- end one project block --->
+    <!--- start one project block --->
+    <div class="one_block">
+        <img src="/project2action/img/noimage.jpg">
+        <h1></h1>
+        <div class="description"></div>
+        <div class="rating"></div>
+    </div>
+    <!--- end one project block --->
+</div>
+<!--- end top project block --->
+<!--- start comment block --->
+<div class="comment_block">
+    <!--- start one comment block --->
+    <div class="one_comment_block">
+        <img src="/project2action/img/noimage.jpg">
+        <div class="name"></div>
+        <div class="comment"></div>
+    </div>
+    <!--- end one comment block --->
+</div>
+<!--- end comment block --->
+<!--- start footer block --->
+<div class="footer_block">
+</div>
+<!--- end footer block --->
+</div>
 </div>
