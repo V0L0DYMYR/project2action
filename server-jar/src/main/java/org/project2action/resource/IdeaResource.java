@@ -18,6 +18,7 @@ import org.project2action.dao.PersonDao;
 import org.project2action.dao.UserDao;
 import org.project2action.domain.Idea;
 import org.project2action.domain.Person;
+import org.project2action.domain.Poll;
 import org.project2action.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,6 +39,14 @@ public class IdeaResource {
         this.ideaDao = ideaDao;
     }
 
+    @GET
+    @UnitOfWork
+    // TODO: get all last 30
+    public List<Idea> getIdeas() {
+        return ideaDao.findAll();
+    }
+
+    
     @GET
     @Path("{id}")
     @UnitOfWork
