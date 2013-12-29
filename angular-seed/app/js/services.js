@@ -14,8 +14,8 @@ angular.module('myApp.services', [])
             create: function(idea, callback){
                 $http.post('/api/idea', idea).success(callback);
             },
-            getPoll: function(pollId, callback){
-                $http.get('/api/poll/'+pollId).success(callback);
+            getIdea: function(ideaId, callback){
+                $http.get('/api/idea/'+ideaId).success(callback);
             },
 
             removeQueue:function(queue){
