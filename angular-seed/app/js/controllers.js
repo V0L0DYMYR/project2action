@@ -11,7 +11,7 @@ angular.module('myApp.controllers', []).
             }
         }
     }])
-    .controller('ViewCtrl', ['$scope', 'PollService', '$routeParams', function ($scope, PollService, $routeParams) {
+    .controller('NewIdeaCtrl', ['$scope', 'PollService', '$routeParams', function ($scope, PollService, $routeParams) {
         var pollId = $routeParams.pollId;
         $scope.me = {
             poll:null,
