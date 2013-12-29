@@ -55,7 +55,7 @@ public class Idea {
     
     @ManyToMany
     @JoinTable(name = "USERS_LIKE_IDEAS",
-       joinColumns = {@JoinColumn(name = "IDEAD_ID")},
+       joinColumns = {@JoinColumn(name = "IDEA_ID")},
        inverseJoinColumns = {@JoinColumn(name = "USER_ID")}
     )
     @JsonIgnore

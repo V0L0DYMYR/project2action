@@ -25,11 +25,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="PROJECTS")
 public class Project {
 
-	
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
     @Column(name="name")
     private String name;
 
@@ -43,16 +43,16 @@ public class Project {
 
     @Transient
     private Long ideaId;
-   
-    
+
+
     @ManyToOne
     @JoinColumn(name="initiator_id")
     @JsonIgnore
     private User initiator;
-    
+
     @Transient
     private Long initiatorId;
-    
+
     @ManyToMany
     @JoinTable(name = "project_participants",
        joinColumns = {@JoinColumn(name = "project_id")},
@@ -60,18 +60,18 @@ public class Project {
     )
     @JsonIgnore
     private Set<User> participants;
-  
+
     @Column(name="status")
     @Enumerated(EnumType.STRING)
     private ProjectStatus status;
-    
+
     @Column(name="resolution")
     private String resolution;
-	
+
     @Column(name="start_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date   startDate;
-    
+    //@Temporal(TemporalType.TIMESTAMP)
+    private long   startDate;
+
     public Project()
     {}
 
@@ -95,8 +95,8 @@ public class Project {
 		return (ideaId==null) ? (idea==null ? null : idea.getId())
 				                   :  ideaId ;
 	}
-	
-	
+
+
 	public User getInitiator() {
 		return initiator;
 	}
@@ -119,41 +119,41 @@ public class Project {
 	}
 
 	public Date getStartDate() {
-		return startDate;
+		return new Date(startDate);
 	}
 
 	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
+		this.startDate = startDate.getTime();
 	}
-    
+
 	private Project(Project prev, User newInitiator)
 	{
 	 copyFrom(prev);
 	 this.initiator = newInitiator;
 	 this.initiatorId = null;
 	}
-	
+
 	public Project withInitiator(User initiator)
 	{
-     return new Project(this, initiator);		
+     return new Project(this, initiator);
 	}
 
 	private Project(Project prev, Date startDate)
 	{
 	 copyFrom(prev);
-	 this.startDate = startDate;
+	 this.startDate = startDate.getTime();
 	}
 
 	public Project withStartDate(Date startDate)
 	{
-     return new Project(this, startDate);		
+     return new Project(this, startDate);
 	}
-	
-	
+
+
 	private void copyFrom(Project p)
 	{
       this.id = p.id;
-      this.name = p.name;		
+      this.name = p.name;
 	  this.description = p.description;
 	  this.idea = p.idea;
 	  this.ideaId = p.ideaId;
@@ -164,5 +164,5 @@ public class Project {
 	  this.resolution = p.resolution;
 	  this.startDate = p.startDate;
 	}
-    
+
 }

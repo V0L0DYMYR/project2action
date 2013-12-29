@@ -1,11 +1,8 @@
 package org.project2action.domain;
 
 import com.google.common.base.Objects;
-import org.project2action.Utils;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "USERS")
@@ -14,31 +11,26 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(name = "GOOGLE_ID", unique = true)
     private String googleId;
-
     private String email;
-
     @Column(name = "FULL_NAME")
     private String fullName;
-
     private String locale;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    /*@ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "MEMBERS_QUEUES",
             joinColumns = {@JoinColumn(name = "MEMBER_ID")},
             inverseJoinColumns = {@JoinColumn(name = "QUEUE_ID")}
     )
-    private List<Queue> memberIn;
+    private List<Queue> memberIn;*/
 
-    @ManyToMany
+    /*@ManyToMany
     @JoinTable(name = "USERS_QUEUES",
             joinColumns = {@JoinColumn(name = "USERS_ID")},
             inverseJoinColumns = {@JoinColumn(name = "QUEUE_ID")}
     )
-    private Set<Queue> queues;
-
+    private Set<Queue> queues;*/
     @Column(name = "SECURITY_TOKEN")
     private String securityToken;
 
@@ -61,12 +53,11 @@ public class User {
         this.email = other.email;
         this.fullName = other.fullName;
         this.locale = other.locale;
-        this.queues = other.queues;
-        this.memberIn = other.memberIn;
         this.securityToken = other.securityToken;
     }
 
-    public User() {}
+    public User() {
+    }
 
     public User(String email, String fullName, String token) {
         this.email = email;
@@ -98,10 +89,6 @@ public class User {
         return securityToken;
     }
 
-    public List<Queue> getMemberIn(){
-        return memberIn;
-    }
-
     @Override
     public String toString() {
         return Objects.toStringHelper(this)
@@ -111,8 +98,4 @@ public class User {
                 .toString();
     }
 
-    public User jumpIn(Queue queue) {
-        Utils.initializeIfNull(this.memberIn).add(queue);
-        return this;
-    }
 }

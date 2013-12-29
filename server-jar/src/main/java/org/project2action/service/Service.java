@@ -34,7 +34,7 @@ import org.project2action.security.SecureTokenFilter;
 public class Service extends com.yammer.dropwizard.Service<Config> {
 
     private final HibernateBundle<Config> hibernate = new HibernateBundle<Config>(
-    		       Person.class, User.class, Queue.class, Poll.class, Idea.class, Project.class
+    		       User.class, Idea.class, Project.class
      ) {
         @Override
         public DatabaseConfiguration getDatabaseConfiguration(Config configuration) {
