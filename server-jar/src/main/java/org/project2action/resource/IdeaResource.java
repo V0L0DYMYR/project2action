@@ -37,6 +37,7 @@ public class IdeaResource {
 
     public IdeaResource(IdeaDao  ideaDao, UserDao userDao) {
         this.ideaDao = ideaDao;
+        this.userDao = userDao;
     }
 
     @GET
