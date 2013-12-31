@@ -27,27 +27,13 @@ public class User {
     private String fullName;
 
     private String locale;
-/*
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "MEMBERS_QUEUES",
-            joinColumns = {@JoinColumn(name = "MEMBER_ID")},
-            inverseJoinColumns = {@JoinColumn(name = "QUEUE_ID")}
-    )
-    private List<Queue> memberIn;*/
-/*
-    @ManyToMany
-    @JoinTable(name = "USERS_QUEUES",
-            joinColumns = {@JoinColumn(name = "USERS_ID")},
-            inverseJoinColumns = {@JoinColumn(name = "QUEUE_ID")}
-    )
-    private Set<Queue> queues;*/
 
     @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,
 		    mappedBy="providedByUser")
     @JsonIgnore
     private Set<Asset> assets;
-   
-    
+
+
     @Column(name = "SECURITY_TOKEN")
     private String securityToken;
 
