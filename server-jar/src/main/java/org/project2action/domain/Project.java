@@ -171,6 +171,7 @@ public class Project {
 	  this.status = p.status;
 	  this.resolution = p.resolution;
 	  this.startDate = p.startDate;
+	  this.assets = p.assets;
 	}
     
 }
