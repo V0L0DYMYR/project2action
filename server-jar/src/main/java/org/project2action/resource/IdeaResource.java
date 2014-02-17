@@ -1,6 +1,7 @@
 package org.project2action.resource;
 
 import com.yammer.dropwizard.hibernate.UnitOfWork;
+import org.project2action.common.Utils;
 import org.project2action.dao.IdeaDao;
 import org.project2action.dao.ProjectDao;
 import org.project2action.dao.UserDao;
@@ -14,6 +15,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+
+import static org.project2action.common.Utils.asSet;
 
 
 @Path("/api/idea")
@@ -39,13 +42,13 @@ public class IdeaResource {
         return ideaDao.findAll();
     }
 
-
     @GET
     @Path("{id}")
     @UnitOfWork
     public Idea get(@Context User user, @PathParam("id") Long ideaId) {
-        System.out.println(user + " " + "get idea " + ideaId);
-        return ideaDao.get(ideaId);
+        Idea idea = ideaDao.get(ideaId);
+        List<Project> projects = projectDao.findByIdea(idea.getId());
+        return idea.withProjects(projects);
     }
 
     @GET
@@ -54,6 +57,14 @@ public class IdeaResource {
     public List<Project> getProjects(@Context User user, @PathParam("id") Long ideaId) {
         System.out.println(user + " " + "get idea " + ideaId);
         return projectDao.findByIdea(ideaId);
+    }
+
+    @PUT
+    @Path("{id}/like")
+    @UnitOfWork
+    public Idea like(@Context User user, @PathParam("id") Long ideaId){
+        Idea idea = ideaDao.get(ideaId).withLikes(asSet(user));
+        return ideaDao.merge(idea);
     }
 
     @POST

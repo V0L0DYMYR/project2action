@@ -17,15 +17,14 @@ angular.module('myApp.services', [])
             getIdea: function(ideaId, callback){
                 $http.get('/api/idea/'+ideaId).success(callback);
             },
-
             createProject:function(project, callback){
-                $http.post('/api/idea/', project).success(callback);
+                $http.post('/api/project/', project).success(callback);
             },
             getProjects:function(ideaId, callback){
                 $http.get('/api/i/'+queueId).success(callback).error(service.onError);
             },
-            insertPerson:function(person, callback){
-                $http.post('/api/person', person).success(callback);
+            like:function(idea, callback){
+                $http.put('/api/idea/'+idea.id+'/like').success(callback);
             },
             removePerson:function(person){
                 $http.delete('/api/person/'+ person.id);

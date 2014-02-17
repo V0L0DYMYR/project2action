@@ -3,11 +3,8 @@ package org.project2action.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Objects;
 
-import org.project2action.Utils;
-
 import javax.persistence.*;
 
-import java.util.List;
 import java.util.Set;
 
 @Entity

@@ -1,4 +1,4 @@
-package org.project2action;
+package org.project2action.common;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;

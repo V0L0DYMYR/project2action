@@ -5,7 +5,7 @@ import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
 import com.yammer.dropwizard.db.DatabaseConfiguration;
 import com.yammer.dropwizard.hibernate.HibernateBundle;
-import org.project2action.UserInjector;
+import org.project2action.common.UserInjector;
 import org.project2action.config.Authorization;
 import org.project2action.config.Config;
 import org.project2action.dao.AssetDao;

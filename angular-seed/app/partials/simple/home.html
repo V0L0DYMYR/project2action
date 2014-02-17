@@ -1,0 +1,18 @@
+<div ng-controller="HomeCtrl" ng-init="me.load()">
+<div class="border-bottom color-blue">
+    <div class="in-center">
+        <a class="link" href="#/newidea">Додати Ідею</a>
+        <form method="post" action="/oauth2/testing/logout" class="right">
+            <input type="submit" class="btn" value="Logout">
+        </form>
+    </div>
+</div>
+    <div ng-repeat="idea in me.ideas" class="idea_box">
+            <div class="idea_header"><a href="#/idea/{{idea.id}}">{{idea.name}}</a></div>
+            <div class="idea_desc">{{idea.description}}</div>
+            <div class="idea_footer">
+                {{ idea.likes }}
+                <div class="btn_like right" ng-click="me.like(idea)">Like</div>
+            </div>
+    </div>
+</div>

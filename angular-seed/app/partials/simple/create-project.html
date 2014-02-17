@@ -1,0 +1,32 @@
+<div ng-controller="CreateProjectCtrl">
+    <div class="border-bottom color-blue">
+        <div class="in-center">
+            <a class="link" href="#/idea/{{me.newProject.idea_id}}">< назад</a>
+        </div>
+    </div>
+    <div>
+        <div class="in-center">
+            <fieldset>
+                <p>
+                    <label class="field">Назва</label>
+                    <input class="textbox" type="text" ng-model="me.newProject.name">
+                </p>
+
+                <p>
+                    <label class="field">Опис</label>
+                    <textarea class="textbox" ng-model="me.newProject.description"></textarea><br>
+                </p>
+
+                <p>
+                    <label class="field">Resolution</label>
+                    <textarea class="textbox" ng-model="me.newProject.resolution"></textarea><br>
+                </p>
+
+                <p>
+                    <div class="btn" ng-click="me.create()">Додати Проект</div>
+                    {{ me.message }}
+                </p>
+            </fieldset>
+        </div>
+    </div>
+</div>

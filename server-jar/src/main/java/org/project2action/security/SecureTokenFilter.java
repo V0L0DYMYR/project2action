@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static org.project2action.Utils.isNotEmpty;
+import static org.project2action.common.Utils.isNotEmpty;
 
 public class SecureTokenFilter implements Filter {
 

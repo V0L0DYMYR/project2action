@@ -1,0 +1,24 @@
+<div class="border-bottom color-blue">
+    <div class="in-center">
+        <a class="link" href="#/home">< назад</a>
+    </div>
+</div>
+<div ng-controller="NewIdeaCtrl">
+    <div class="in-center">
+        <fieldset>
+            <p>
+                <label class="field">Назва ідеї</label>
+                <input class="textbox" type="text" ng-model="me.newIdea.name"><br />
+            </p>
+
+            <p>
+                <label class="field">Опис ідеї</label>
+                <textarea class="textbox" ng-model="me.newIdea.description"></textarea><br />
+            </p>
+            <p>
+                <div class="btn" ng-click="me.create()">Додати ідею</div>
+                {{ me.message }}
+            </p>
+        </fieldset>
+    </div>
+</div>

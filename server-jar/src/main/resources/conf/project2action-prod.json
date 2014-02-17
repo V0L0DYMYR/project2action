@@ -4,7 +4,7 @@
         "driverClass": "com.mysql.jdbc.Driver",
         "user": "root",
         "password": "2action",
-        "url": "jdbc:mysql://localhost:3306/project2action",
+        "url": "jdbc:mysql://localhost:3306/project2action?useUnicode=true&characterEncoding=utf-8",
         "properties":{
             "hibernate.hbm2ddl.auto": "validate",
             "hibernate.dialect": "org.hibernate.dialect.MySQLInnoDBDialect",

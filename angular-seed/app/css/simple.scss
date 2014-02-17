@@ -1,0 +1,111 @@
+@import 'reset';
+
+$btn-height: 20px;
+$btn-color: #fd6c40;
+$gap: 5px;
+$color-blue: #cce3fb;
+$color-blue-dark: #04396C;
+$idea_height: 200px;
+//--- <  DESIGN >
+.color-blue-dark{ background-color: #04396C;}
+.color-blue{ background-color: #679ED2;}
+.color-white{ background-color: #fff;}
+//--- </ DESIGN >
+
+@mixin fonts($size: 12pt, $padding:$gap, $color: black) {
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: $size;
+  color: $color;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  text-decoration: none;
+}
+@mixin border($top:1px, $bottom:1px, $right:1px, $left:1px, $color: black){
+  border-top: $top solid $color;
+  border-bottom: $bottom solid $color;
+  border-right: $right solid $color;
+  border-left: $left solid $color;
+}
+@mixin highlight{
+  width: 100%;
+  background-color: $color-blue;
+}
+.idea_header{@include highlight(); height: $btn-height;}
+.idea_desc{height: $idea_height - 2*$btn-height;}
+.idea_footer{@include highlight(); height: $btn-height;}
+.idea_box{
+  vertical-align: top;
+  display: inline-block;
+  margin: 10px 0 0 10px;
+  width: $idea_height;
+  height: $idea_height;
+  background-color: lighten($color-blue, 10%);
+  @include border(1px, 1px, 1px, 1px, darken($color-blue, 20%));
+}
+
+.h-middle {
+  margin: 0 auto;
+  width: 800px;
+  height: 100%;
+}
+
+.v-middle {
+  top: 50%;
+  margin-top: -100px;
+  position: absolute;
+  border-left: 2px solid black;
+  padding: 10px 30px;
+}
+
+@mixin box{padding:10px 0;}
+.box {@include box;}
+
+.border-top { @include border(1px,0,0,0); @include box;}
+.border-bottom { @include border(0, 1px, 0, 0); @include box;}
+.border-vertical { @include border(1px, 1px, 0, 0); @include box;}
+
+input{ height: 6*$gap - 2; margin:0px; padding: 0;
+  display: inline-block; @include border; box-sizing: border-box; line-height: 6*$gap;}
+
+@mixin btn($color: $btn-color, $height: 6*$gap, $radius:3px, $lr-padding: 4*$gap) {
+  border-radius: $radius;
+  background-color: $color;
+  line-height: $height - 2;
+  height: $height - 2;
+  text-align: center;
+  border: 1px solid $color;
+  padding: 0 $lr-padding 0 $lr-padding;
+  display: inline-block;
+  @include fonts(10pt, 0, #fff);
+}
+.btn{@include btn;}
+.link{@include btn($color-blue-dark);}
+.btn_like{@include btn(darken($color-blue, 10%), 4*$gap, 3px, 2*$gap);}
+
+.inline{display: inline-block;}
+.left{float: left;}
+.right{float: right;}
+.in-center{margin-left: 10px; margin-right: 10px;}
+
+h2 { @include fonts(15pt); }
+
+html, body { height: 100%; }
+
+//------ <  FORMS >
+fieldset {
+  width: 500px;
+}
+label.field {
+  text-align: right;
+  width: 100px;
+  float: left;
+}
+input.textbox, textarea.textbox{
+  width: 300px;
+  float: right;
+}
+fieldset p {
+  clear: both;
+
+}
+//------ </ FORMS >

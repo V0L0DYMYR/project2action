@@ -1,4 +1,4 @@
-package org.project2action;
+package org.project2action.common;
 
 import com.sun.jersey.api.core.HttpContext;
 import com.sun.jersey.core.spi.component.ComponentContext;

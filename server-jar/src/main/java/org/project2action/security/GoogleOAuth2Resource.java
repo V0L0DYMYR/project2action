@@ -6,6 +6,7 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 import com.yammer.dropwizard.hibernate.UnitOfWork;
 import org.eclipse.jetty.util.ajax.JSON;
+import org.project2action.common.UserAgent;
 import org.project2action.config.Authorization;
 import org.project2action.config.GoogleAuthorization;
 import org.project2action.dao.UserDao;
@@ -13,9 +14,10 @@ import org.project2action.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
@@ -28,6 +30,8 @@ public class GoogleOAuth2Resource extends AbstractOAuthResource {
     private Logger LOG = LoggerFactory.getLogger(GoogleOAuth2Resource.class);
     private final GoogleAuthorization googleConfig;
     private final UserDao userDao;
+    @Context
+    HttpServletRequest req;
 
     public GoogleOAuth2Resource(UserDao userDao, Authorization config) {
         super(config);
@@ -43,8 +47,9 @@ public class GoogleOAuth2Resource extends AbstractOAuthResource {
         String token = requestForAccessToken(code);
         User user = requestForUserInfo(token);
         userDao.saveOrUpdate(user);
+        String homePage = (new UserAgent(req).isMobile()) ? config.getMobileHomePage() : config.getHomePage();
 
-        return Response.seeOther(URI.create(config.getHomePage()))
+        return Response.seeOther(URI.create(homePage))
                 .cookie(createCookieWithSecurityToken(token))
                 .build();
     }

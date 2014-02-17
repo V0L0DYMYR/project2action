@@ -22,17 +22,19 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name="PROJECTS")
 public class Project {
 
-	
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
     @Column(name="name")
     private String name;
 
@@ -46,16 +48,16 @@ public class Project {
 
     @Transient
     private Long ideaId;
-   
-    
+
+
     @ManyToOne
     @JoinColumn(name="initiator_id")
     @JsonIgnore
     private User initiator;
-    
+
     @Transient
     private Long initiatorId;
-    
+
     @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name = "project_participants",
        joinColumns = {@JoinColumn(name = "project_id")},
@@ -63,25 +65,35 @@ public class Project {
     )
     @JsonIgnore
     private Set<User> participants;
-  
+
     @OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL,
     		    mappedBy="neededInProject")
     @JsonIgnore
     private Set<Asset> assets;
-     
+
     @Column(name="status")
     @Enumerated(EnumType.STRING)
-    private ProjectStatus status;
-    
+    private ProjectStatus status = ProjectStatus.OPEN;
+
     @Column(name="resolution")
     private String resolution;
-	
+
     @Column(name="start_date")
     //@Temporal(TemporalType.TIMESTAMP)
     private long   startDate;
 
-    public Project()
-    {}
+    public Project() {}
+
+    @JsonCreator
+    public Project(@JsonProperty("id") Long id,
+                   @JsonProperty("name") String name,
+                   @JsonProperty("description")String description,
+                   @JsonProperty("idea_id")Long ideaId) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.idea = new Idea(ideaId);
+    }
 
 	public Long getId() {
 		return id;
@@ -103,8 +115,8 @@ public class Project {
 		return (ideaId==null) ? (idea==null ? null : idea.getId())
 				                   :  ideaId ;
 	}
-	
-	
+
+
 	public User getInitiator() {
 		return initiator;
 	}
@@ -133,17 +145,17 @@ public class Project {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate.getTime();
 	}
-    
+
 	private Project(Project prev, User newInitiator)
 	{
 	 copyFrom(prev);
 	 this.initiator = newInitiator;
 	 this.initiatorId = null;
 	}
-	
+
 	public Project withInitiator(User initiator)
 	{
-     return new Project(this, initiator);		
+     return new Project(this, initiator);
 	}
 
 	private Project(Project prev, Date startDate)
@@ -154,14 +166,14 @@ public class Project {
 
 	public Project withStartDate(Date startDate)
 	{
-     return new Project(this, startDate);		
+     return new Project(this, startDate);
 	}
-	
-	
+
+
 	private void copyFrom(Project p)
 	{
       this.id = p.id;
-      this.name = p.name;		
+      this.name = p.name;
 	  this.description = p.description;
 	  this.idea = p.idea;
 	  this.ideaId = p.ideaId;
@@ -173,5 +185,5 @@ public class Project {
 	  this.startDate = p.startDate;
 	  this.assets = p.assets;
 	}
-    
+
 }

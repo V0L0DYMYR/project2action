@@ -3,62 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>Project2Action</title>
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/simple.css"/>
+    <link rel="stylesheet" href="css/pure.css"/>
+    <!--<link rel="stylesheet" href="css/main.css"/>-->
 </head>
 <body>
 
-<div class="header_block">
-    <img src="img/hbg.png" class="bg_image">
-    <!--- start shell --->
-    <div class="shell">
-        <!--- start header menu --->
-        <div class="header_menu">
-            <a href="/"><div class="logo_div left_div"></div></a>
-            <!--- start nav div --->
-            <div class="nav_div">
-                <ul>
-                    <li><a href="#">Головна</a></li>
-                    <li>Ресурсы
-                        <ul>
-                            <li><a href="#">Ідеї</a></li>
-                            <li><a href="#">Проекти</a></li>
-                            <li><a href="#">Учасники</a></li>
-                            <li><a href="#">Кейси</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Контакти</a></li>
-                    <li><a href="#">Вхід</a></li>
-                </ul>
-            </div>
-            <!--- end nav div --->
-        </div>
-        <!--- end header menu --->
-        <!--- start info header block --->
-        <div class="info_block">
-            <h1>Наш проект дає життя цікавим соціальним ідеям</h1>
-            <div class="description">Якщо у Вас є цкава ідея, як найкраще організувати або поліпшити простір навколо себе, запропонуйте свою ідею, і якщо вона набере багато голосів, ми допоможемо її реалізувати</div>
-            <div class="button_idea"><a href="#newidea">+додати ідею</a></div>
-        </div>
-        <!--- end info header block --->
-    </div>
-    </div>
     <div ng-view></div>
-    <div class="footer_block">
-        <div class="shell">
-            <div class="logo_div"><img src="img/logo.png"></div>
-            <hr>
-            <div class="social">
-                <a href="#google+"><img src="img/social-g.png"></a>
-                <a href="#facebook"><img src="img/social-f.png"></a>
-                <a href="#twitter"><img src="img/social-t.png"></a>
-                <a href="#rss"><img src="img/social-r.png"></a>
-            </div>
-        </div>
-    </div>
 
-    <!-- In production use:
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    -->
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular/angular-route.js"></script>
 <script src="js/app.js"></script>

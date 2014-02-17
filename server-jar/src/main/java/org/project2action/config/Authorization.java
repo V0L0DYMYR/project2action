@@ -21,6 +21,7 @@ public class Authorization {
     @JsonProperty
     private String signInPage;
     private String secureUrl;
+    private String mobileHomePage;
 
     public GoogleAuthorization getGoogle() {
         return google;
@@ -68,5 +69,13 @@ public class Authorization {
 
     public void setSecureUrl(String secureUrl) {
         this.secureUrl = secureUrl;
+    }
+
+    public String getMobileHomePage() {
+        return mobileHomePage;
+    }
+
+    public void setMobileHomePage(String mobileHomePage) {
+        this.mobileHomePage = mobileHomePage;
     }
 }

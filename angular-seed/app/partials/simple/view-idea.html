@@ -1,0 +1,24 @@
+<div ng-controller="IdeaCtrl" ng-init="me.getIdea()">
+    <div class="border-bottom color-blue">
+        <div class="in-center">
+            <a class="link" href="#/home">< назад</a>
+            <a class="btn" href="#createProject/{{me.idea.id}}">Create Project</a>
+        </div>
+    </div>
+    <div>
+        <div class="in-center">
+            <span>Назва:</span>
+            <b>{{me.idea.name}}</b><br>
+
+            <span>Опис:</span>
+            <b>{{me.idea.description}}</b><br>
+
+            <div>
+                <div ng-repeat="project in me.idea.projects" class="idea_box">
+                    <div>{{ project.name}}</div>
+                    <span>{{ project.description}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

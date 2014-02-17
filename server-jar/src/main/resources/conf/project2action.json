@@ -14,6 +14,7 @@
     },
     "authorization":{
         "homePage":"/project2action/index.html",
+        "mobileHomePage":"/project2action/index-mobile.html",
         "signInPage":"/project2action/test-signin.html",
         "securityTokenName":"TOKEN",
         "securityTokenExpirationTime":7200,

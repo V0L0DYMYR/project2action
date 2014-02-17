@@ -1,25 +1,18 @@
 package org.project2action.domain;
 
+import java.util.List;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.project2action.common.Utils;
+
+import static org.project2action.common.Utils.initializeIfNull;
 
 
 @Entity
@@ -42,6 +35,9 @@ public class Idea {
     @JoinColumn(name="author_id")
     @JsonIgnore
     private User author;
+
+    @Transient
+    private List<Project> projects;
     
     @Transient
     private Long authorId;
@@ -53,13 +49,16 @@ public class Idea {
     		                  : authorId ;
     }
     
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "USERS_LIKE_IDEAS",
        joinColumns = {@JoinColumn(name = "IDEA_ID")},
        inverseJoinColumns = {@JoinColumn(name = "USER_ID")}
     )
     @JsonIgnore
-    private Set<User> likes;
+    private Set<User> likers;
+
+    @Transient
+    private Integer likes = 0;
     
 	public Long getId() {
 		return id;
@@ -78,8 +77,8 @@ public class Idea {
 		return author;
 	}
 
-	public Set<User> getLikes() {
-		return likes;
+	public Set<User> getLikers() {
+		return likers;
 	}
      
     @JsonCreator
@@ -92,9 +91,10 @@ public class Idea {
          this.description = description;
     }
     
-    public Idea()
-    {
-     // make hibernate happy	
+    public Idea() { }
+
+    public Idea(Long id) {
+        this.id = id;
     }
 
     private Idea(Idea prev, User newAuthor)
@@ -102,7 +102,7 @@ public class Idea {
     	this.id = prev.id;
     	this.name = prev.name;
     	this.description = prev.description;
-    	this.likes = prev.likes;
+    	this.likers = prev.likers;
     	this.author = newAuthor;
         this.authorId = newAuthor.getId();
     }
@@ -111,12 +111,12 @@ public class Idea {
     	return new Idea(this, newAuthor);
     }
     
-    private Idea(Idea prev, Set<User> newLikes)
-    {
-    	this.id = prev.id;
+    private Idea(Idea prev, Set<User> newLikes) {
+        this.id = prev.id;
     	this.name = prev.name;
     	this.description = prev.description;
-    	this.likes = newLikes;
+    	this.likers = initializeIfNull(prev.likers);
+        this.likers.addAll(newLikes);
     	this.author = prev.getAuthor();
     }
 
@@ -124,5 +124,16 @@ public class Idea {
     	return new Idea(this, newLikes);
     }
    
-    
+    public Idea withProjects(List<Project> projects){
+        this.projects = projects;
+        return this;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public Integer getLikes() {
+        return likers != null ? likers.size() : 0;
+    }
 }

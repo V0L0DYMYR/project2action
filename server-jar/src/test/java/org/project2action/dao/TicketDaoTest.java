@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 import static org.fest.assertions.api.Assertions.assertThat;
-import static org.project2action.Utils.asSet;
+import static org.project2action.common.Utils.asSet;
 
 @Ignore
 public class TicketDaoTest {

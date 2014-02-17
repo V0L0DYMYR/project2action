@@ -44,6 +44,40 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.color-blue-dark {
+  background-color: #04396C; }
+
+.color-blue {
+  background-color: #679ED2; }
+
+.color-white {
+  background-color: #fff; }
+
+.idea_header {
+  width: 100%;
+  background-color: #cce3fb;
+  height: 20px; }
+
+.idea_desc {
+  height: 160px; }
+
+.idea_footer {
+  width: 100%;
+  background-color: #cce3fb;
+  height: 20px; }
+
+.idea_box {
+  vertical-align: top;
+  display: inline-block;
+  margin: 10px 0 0 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #fbfdff;
+  border-top: 1px solid #6daff4;
+  border-bottom: 1px solid #6daff4;
+  border-right: 1px solid #6daff4;
+  border-left: 1px solid #6daff4; }
+
 .h-middle {
   margin: 0 auto;
   width: 800px;
@@ -94,32 +128,48 @@ input {
 
 .btn {
   border-radius: 3px;
-  background: #fd6c40;
+  background-color: #fd6c40;
   line-height: 28px;
   height: 28px;
   text-align: center;
-  border: 1px solid #a22702;
+  border: 1px solid #fd6c40;
   padding: 0 20px 0 20px;
   display: inline-block;
   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-  font-size: 11pt;
-  color: black;
+  font-size: 10pt;
+  color: white;
   padding-top: 0;
   padding-bottom: 0;
   text-decoration: none; }
 
 .link {
   border-radius: 3px;
-  background: #cce3fb;
+  background-color: #04396c;
   line-height: 28px;
   height: 28px;
   text-align: center;
-  border: 1px solid #3e95f0;
+  border: 1px solid #04396c;
   padding: 0 20px 0 20px;
   display: inline-block;
   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-  font-size: 11pt;
-  color: black;
+  font-size: 10pt;
+  color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-decoration: none; }
+
+.btn_like {
+  border-radius: 3px;
+  background-color: #9dc9f7;
+  line-height: 18px;
+  height: 18px;
+  text-align: center;
+  border: 1px solid #9dc9f7;
+  padding: 0 10px 0 10px;
+  display: inline-block;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: white;
   padding-top: 0;
   padding-bottom: 0;
   text-decoration: none; }
@@ -131,8 +181,11 @@ input {
   float: left; }
 
 .right {
-  float: right;
-  margin-top: -5px; }
+  float: right; }
+
+.in-center {
+  margin-left: 10px;
+  margin-right: 10px; }
 
 h2 {
   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
@@ -144,3 +197,18 @@ h2 {
 
 html, body {
   height: 100%; }
+
+fieldset {
+  width: 500px; }
+
+label.field {
+  text-align: right;
+  width: 100px;
+  float: left; }
+
+input.textbox, textarea.textbox {
+  width: 300px;
+  float: right; }
+
+fieldset p {
+  clear: both; }
